@@ -1,0 +1,30 @@
+<h2>Formulario de Moneda</h2>
+<form [formGroup]="monedaForm" (ngSubmit)="guardarMoneda()">
+  <div>
+    <label for="moneda">Moneda:</label>
+    <input type="text" id="moneda" formControlName="moneda" required>
+  </div>
+  <br />
+  <button type="submit" [disabled]="monedaForm.invalid">Guardar</button>
+</form>
+
+<h2>Monedas Registradas</h2>
+<table datatable [dtOptions]="dtOptions"   class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Moneda</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let moneda of monedas">
+      <td>{{ moneda.monedaid }}</td>
+      <td>{{ moneda.moneda }}</td>
+      <td>
+        <button (click)="editarMoneda(moneda)">Editar</button>
+        <button (click)="eliminarMoneda(moneda)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

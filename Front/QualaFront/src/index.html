@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mi Proyecto</title>
+</head>
+<body>
+  <header>
+    <h1>QUALA</h1>
+  </header>
+  <main>
+    <div class="menu">
+      <ul>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a>moneda</a>
+        </li>
+        <!--<li><a routerLinkActive ="/moneda">Monedas</a></li>-->
+        <li routerLinkActive="active">
+          <a routerLink="sucursales" class="nav-link">Sucursales</a>
+        </li>
+      </ul>
+
+    </div>
+    <app-root style="width: 80%; border: solid 1px #000; border-radius: 5px;">
+
+    </app-root>
+    <app-nav-bar></app-nav-bar>
+    <router-outlet>
+
+    </router-outlet>
+
+  </main>
+
+</body>
+</html>
